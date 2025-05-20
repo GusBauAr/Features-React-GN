@@ -1,25 +1,24 @@
 import { useForm } from "../hooks/useForm";
 
-export const TodoAdd = ({onNewTodo}) => {
+export const TodoAdd = ({ onNewTodo }) => {
+  const { title, description, onInputChange, onResetForm } = useForm({
+    title: "",
+    description: "",
+  });
 
- const { description, onInputChange, onResetForm } = useForm({
-    description:''
- });
-
- const onFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
-    if( description.length <= 1) return;
+    if (title.length <= 1) return;
 
     const newTodo = {
-        id:new Date().getTime(),
-        done: false,
-        description:description,
-    }
+      id: new Date().getTime(),
+      done: false,
+      title,
+      description,
+    };
     onNewTodo(newTodo);
     onResetForm();
- }
-
-
+  };
 
   return (
     <form onSubmit={onFormSubmit}>
@@ -27,6 +26,12 @@ export const TodoAdd = ({onNewTodo}) => {
         type="text"
         placeholder="quue hay que hacer?"
         className="from-control"
+        name="title"
+        value={title}
+        onChange={onInputChange}
+      />
+      <textarea
+        placeholder="Descripción"
         name="description"
         value={description}
         onChange={onInputChange}
