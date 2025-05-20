@@ -5,8 +5,14 @@ export const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
       className={`align-self-center ${(todo.done) ? 'text-decoration-line-through': ''}`}
       onClick={() => onToggleTodo(todo.id)}
       >
+        {todo.title}
+
+      <p className={`align-self-center ${todo.done ? 'text-decoration-line-through text-muted' : ''}`}>
         {todo.description}
+      </p>
+        
       </span>
+
       <button className="btn btn-danger" onClick={() => onDeleteTodo(todo.id)}
       >Borrar</button>
     </li>

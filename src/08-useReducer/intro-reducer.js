@@ -3,9 +3,8 @@
 //estado inicial
 const initialState =[{
     id:1,
-    todo: ' recolectar la piedra del alma',
-    description: 'gajshgdhjsgd',
-    priotiry:
+    todo: ' dormir',
+    descriptionTodo:'ir a domir a las 11:00pm',
     done: false,
 }]
 
@@ -28,7 +27,8 @@ let todos = todoReducer();
 //creamos un todo
 const newTodo ={
     id:2,
-    todo:'recolectar la piedra del poder',
+    todo:'compras',
+    descriptionTodo:'ir al mercado a comprar verduras',
     done:false,
 }
 
