@@ -20,4 +20,5 @@ If you are developing a production application, we recommend using TypeScript wi
 
 - Agregar propiedad adinicional para que le TODO tenga una description
 - Agregar una propiedad para que TODO tenga prioridad ( baja, media, alta)
+
 - agregar 2 secciones (Tabs) 1: para TODOS pendientes 2: para completadas
